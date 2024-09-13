@@ -1,0 +1,171 @@
+url = "/"
+layout = "default"
+title = "Úvod"
+
+[collection slider]
+handle = "Slider\Slide"
+
+[global slider_settings]
+handle = "Slider\Settings"
+
+[collection partners]
+handle = "Partners\Partner"
+
+[collection portfolio_categories]
+handle = "Portfolio\Category"
+
+[blogCategories categories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "novinky-kategorie"
+
+[Gallery gallery]
+gallery = "portfolio"
+imagesPerPage = 8
+==
+{% if slider.getIterator().count %}
+    <div class="{#container-fluid#} d-block d-md-block"> {# uncomment while slider with horizontal margin #}
+        <div class="slider-swiper-wrapper position-relative {#container-fluid#}"> {# uncomment while slider with horizontal margin #}
+            {% partial "_swiper/slider" slides=slider settings=slider_settings %}
+
+            <div class="gradient position-absolute start-0 top-0 w-100 h-100"></div>
+
+            <div class="info position-absolute end-0 p-5 d-none d-md-block rounded-start-2">
+                <p class="title fw-bold fs-1 mb-0 lh-sm text-white">
+                    REMA Trutnov
+                </p>
+
+                <p class="heading h2 mb-0 text-white">
+                    Správa bytového fondu
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{#{% component "quicknews" %}#}
+
+<div class="container-fluid py-5" id="o-firme-rema">
+    <div class="container-lg py-xl-4 content">
+        <h2 class="h1 text-center">
+            Firma REMA Trutnov se zabývá správou bytového fondu
+        </h2>
+
+        <p class="text-center">
+            Provádí revize tlakových nádob a parních kotlů, revize nádob k dopravě plynů - potápěčské lahve.
+            Zprostředkovává modernizace výtahů.
+        </p>
+
+        <p class="text-center">
+            <strong>
+                Dle požadavku MPSV pracujeme převážně z domu.
+            </strong>
+        </p>
+    </div>
+</div>
+
+<div class="container-fluid py-5 bg-light" id="sprava-bytoveho-fondu">
+    <div class="container-lg py-xl-4 content">
+        <h2 class="h1 text-center mb-4">
+            Správa bytového fondu
+        </h2>
+
+        <div class="col-xl-8 offset-xl-2 col-xxl-6 offset-xxl-3">
+            {% content "sprava-bytoveho-fondu" %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="tlakova-zarizeni">
+    <div class="container-lg py-xl-4 content">
+        <h2 class="h1 text-center mb-4">
+            Tlaková zařízení
+        </h2>
+
+        <p class="text-center mb-5">
+            V oblasti tlakových nádob nabízíme:
+        </p>
+
+        <div class="row row-cols-1 row-cols-lg-3 g-5">
+            <div class="col">
+                <p class="text-center h2 fw-bold mb-0">
+                    <span class="number d-inline-flex align-items-center justify-content-center bg-light rounded-circle">
+                        1
+                    </span>
+                </p>
+
+                <h3 class="h5 mb-2 mt-4 fw-semibold text-center">
+                    Revize tlakových nádob stabilních
+                </h3>
+
+                <p class="mb-0 text-center">
+                    Revize, opravy a montáže tlakových nádob.
+                </p>
+            </div>
+
+            <div class="col">
+                <p class="text-center h2 fw-bold mb-0">
+                    <span class="number d-inline-flex align-items-center justify-content-center bg-light rounded-circle">
+                        2
+                    </span>
+                </p>
+
+                <h3 class="h5 mb-2 mt-4 fw-semibold text-center">
+                    Revize parních kotlů a nízkotlakých kotelen
+                </h3>
+
+                <p class="mb-0 text-center">
+                    Revize a opravy parních a kapalinových kotlů III. a IV. třídy.
+                </p>
+            </div>
+
+            <div class="col">
+                <p class="text-center h2 fw-bold mb-0">
+                    <span class="number d-inline-flex align-items-center justify-content-center bg-light rounded-circle">
+                        3
+                    </span>
+                </p>
+
+                <h3 class="h5 mb-2 mt-4 fw-semibold text-center">
+                    Revize tlakových nádob k dopravě plynů
+                </h3>
+
+                <p class="mb-0 text-center">
+                    Revize, opravy a čištění potápěčských lahví a dýchacích přístrojů.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5 bg-light" id="zivnostenske-listy">
+    <div class="container-lg py-xl-4 content">
+        <h2 class="h1 text-center mb-4">
+            Živnostenské listy
+        </h2>
+
+        <div class="col-xl-8 offset-xl-2 col-xxl-6 offset-xxl-3">
+            {% content "zivnostenske-listy" %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="opravneni-k-cinnosti">
+    <div class="container-lg py-xl-4 content">
+        <h2 class="h1 text-center mb-4">
+            Oprávnění a osvědčení k činnosti
+        </h2>
+
+        {% content "opravneni-k-cinnosti" %}
+    </div>
+</div>
+
+{#<div class="container-fluid pt-5" id="portfolio">#}
+{#    <div class="container-lg pt-xl-5">#}
+{#        <h2 class="h1 text-center mb-4">#}
+{#            Portfolio#}
+{#        </h2>#}
+
+{#        {% component "gallery" %}#}
+{#    </div>#}
+{#</div>#}
