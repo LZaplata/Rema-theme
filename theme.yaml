@@ -13,7 +13,6 @@ require:
     - janvince.smallgdpr
     - lzaplata.extensions
     - lzaplata.gallery
-    - lzaplata.pages
 form:
     tabs:
         fields:
